@@ -8,9 +8,11 @@ import { HeroLanding } from "@/components/sections/hero-landing";
 import { getSlotImageUrl, type DeviceVariant } from "@/lib/media-assets";
 import { getSubstackPosts } from "@/lib/substack";
 
-function resolveDeviceVariant(userAgent?: string | null): DeviceVariant {
+type PageDeviceVariant = "mobile" | "desktop";
+
+function resolveDeviceVariant(userAgent?: string | null): PageDeviceVariant {
   if (!userAgent) {
-    return "universal";
+    return "desktop";
   }
 
   const normalized = userAgent.toLowerCase();
@@ -19,11 +21,7 @@ function resolveDeviceVariant(userAgent?: string | null): DeviceVariant {
     return "mobile";
   }
 
-  if (/macintosh|windows|linux|x11/.test(normalized)) {
-    return "desktop";
-  }
-
-  return "universal";
+  return "desktop";
 }
 
 function isAppleMobileDevice(userAgent?: string | null): boolean {
@@ -38,7 +36,8 @@ export default async function Home() {
   const headerList = await headers();
   const userAgent = headerList.get("user-agent");
   const deviceVariant = resolveDeviceVariant(userAgent);
-  const shouldUseLocalHeroImage = isAppleMobileDevice(userAgent);
+  const isMobileView = deviceVariant === "mobile";
+  const shouldUseLocalHeroImage = isMobileView || isAppleMobileDevice(userAgent);
   const heroImageUrl = shouldUseLocalHeroImage
     ? "/brand/hero-medical.svg"
     : await getSlotImageUrl("hero_background", "/brand/hero-medical.svg", deviceVariant, {
@@ -88,8 +87,8 @@ export default async function Home() {
 
   return (
     <main className="bg-background text-foreground">
-      <SiteHeader />
-      <HeroLanding backgroundImageUrl={heroImageUrl} />
+      <SiteHeader deviceVariant={deviceVariant} />
+      <HeroLanding backgroundImageUrl={heroImageUrl} deviceVariant={deviceVariant} />
 
       <section className="mx-auto grid w-full max-w-7xl gap-6 px-6 py-16 sm:px-10 lg:px-12 lg:grid-cols-[1fr_1fr]">
         <article className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
