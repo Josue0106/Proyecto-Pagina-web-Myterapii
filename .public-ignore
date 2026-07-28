@@ -14,8 +14,15 @@ supabase/
 automation/
 ops/
 roadmap/
+.github/
+.vscode/
+.idea/
 .sensitive
 secrets/
 *.sqlite
 *.sqlite3
 *.db
+node_modules/
+.next/
+out/
+coverage/
