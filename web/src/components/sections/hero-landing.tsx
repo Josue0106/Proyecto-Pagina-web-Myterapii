@@ -31,9 +31,21 @@ export function HeroLanding({ backgroundImageUrl }: HeroLandingProps) {
 
   return (
     <section className="relative min-safe-screen overflow-hidden px-safe">
+      <Image
+        src={currentImageUrl}
+        alt=""
+        fill
+        priority={false}
+        quality={70}
+        sizes="100vw"
+        unoptimized={currentImageUrl.startsWith("http")}
+        loader={supabaseImageLoader}
+        className="absolute inset-0 z-0 object-cover"
+        onError={() => setCurrentImageUrl("/brand/hero-medical.svg")}
+      />
       <div
         aria-hidden="true"
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-10"
         style={{
           backgroundImage:
             "linear-gradient(115deg, rgba(8,14,24,0.9) 0%, rgba(8,14,24,0.72) 46%, rgba(8,14,24,0.58) 100%)",
