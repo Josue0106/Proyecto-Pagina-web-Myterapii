@@ -1,5 +1,5 @@
 export const siteSettings = {
-  logoPath: process.env.NEXT_PUBLIC_LOGO_PATH ?? "/brand/logo.jpg",
+  logoPath: process.env.NEXT_PUBLIC_LOGO_PATH ?? "/brand/logo.svg",
   logoAlt: process.env.NEXT_PUBLIC_LOGO_ALT ?? "Logo de fisioterapia",
   googleBookingUrl:
     process.env.NEXT_PUBLIC_GOOGLE_BOOKING_URL ?? "https://calendar.app.google/xFkXWnNwQCSwjsBL7",
