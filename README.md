@@ -23,3 +23,9 @@ Este repositorio reúne la base documental y técnica de un proyecto de clínica
 La idea central es facilitar una experiencia simple, profesional y cercana para los pacientes: descubrir los servicios, entender cómo funciona la clínica, reservar una cita y mantener un canal de comunicación claro con el equipo.
 
 Este repositorio está pensado para ser legible fuera del contexto interno del equipo inicial, por lo que prioriza explicar el propósito, la estructura y la lógica general del proyecto sobre cualquier detalle operativo de ejecución.
+
+## Preparación para un clon público
+Para crear una copia pública de portfolio sin subir activos sensibles ni datos privados, conviene:
+- usar archivos locales en la carpeta web/public/ para el logo y futuras imágenes,
+- evitar subir archivos de entorno con secretos reales,
+- y seguir la guía en scripts/prepare-public-clone.md.
