@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -44,6 +45,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen min-h-dvh flex flex-col bg-background text-foreground">
         {children}
+        <Analytics />
         <Script id="eruda-debug" strategy="afterInteractive">
           {`
             if (typeof window !== "undefined" && window.location.search.includes("debug=1")) {
