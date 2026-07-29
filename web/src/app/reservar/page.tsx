@@ -1,4 +1,4 @@
-import { CalendarDays } from "lucide-react";
+import { CalendarDays, MessageCircle } from "lucide-react";
 
 import { BookingRequestForm } from "@/components/forms/booking-request-form";
 import { PageTopbar } from "@/components/layout/page-topbar";
@@ -17,7 +17,7 @@ export default function BookingPage() {
       </p>
 
       <section className="mt-10 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-        <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
           <div className="mb-3 flex items-center justify-between">
             <h2 className="text-lg font-semibold text-slate-900">Calendario de reservas de Google</h2>
             <a
@@ -35,56 +35,78 @@ export default function BookingPage() {
             Se abrirá una nueva pestaña para seleccionar fecha y hora disponibles.
           </p>
 
-          <a
-            href={siteSettings.googleBookingUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-5 inline-flex rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800"
-          >
-            Reservar en Google Calendar
-          </a>
-
-          <div className="mt-6 grid gap-3 rounded-2xl bg-slate-50 p-4 text-sm text-slate-700">
-            <p>
-              <strong>Zona horaria:</strong> {siteSettings.timezoneLabel}
-            </p>
-            <p>
-              <strong>Duración:</strong> {siteSettings.bookingDurationLabel}
-            </p>
-            <p>
-              <strong>Horario:</strong> {siteSettings.bookingWindowLabel}
-            </p>
-            <p>
-              <strong>Descanso:</strong> {siteSettings.breakWindowLabel}
-            </p>
-            <p>
-              <strong>Margen:</strong> {siteSettings.bookingBufferLabel}
-            </p>
-            <p>
-              <strong>Antelación:</strong> {siteSettings.bookingNoticeLabel}
-            </p>
-            <p>
-              <strong>WhatsApp:</strong> {siteSettings.whatsappNumber || "Pendiente de configurar"}
-            </p>
-          </div>
-
-          {whatsappUrl ? (
+          <div className="mt-7 grid gap-4 sm:grid-cols-2">
             <a
-              href={whatsappUrl}
+              href={siteSettings.googleBookingUrl}
               target="_blank"
               rel="noreferrer"
-              className="mt-4 inline-flex rounded-full border border-slate-300 px-5 py-2.5 text-sm font-medium text-slate-900 transition hover:bg-slate-100"
+              className="group inline-flex min-h-24 flex-col items-start justify-center gap-1 rounded-2xl bg-slate-900 px-6 py-5 text-left text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
             >
-              ¿No ves horario? Escríbenos por WhatsApp
+              <span className="inline-flex items-center gap-2 text-base font-semibold">
+                <CalendarDays className="h-5 w-5" />
+                Reservar en Google Calendar
+              </span>
+              <span className="text-sm text-slate-200">Elige fecha y hora disponible en menos de 2 minutos.</span>
             </a>
-          ) : (
-            <p className="mt-4 text-sm text-slate-600">
-              Para activar el respaldo por WhatsApp, define <strong>NEXT_PUBLIC_WHATSAPP_NUMBER</strong>.
-            </p>
-          )}
+
+            {whatsappUrl ? (
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex min-h-24 flex-col items-start justify-center gap-1 rounded-2xl border border-teal-300 bg-teal-50 px-6 py-5 text-left text-teal-900 shadow-sm transition hover:-translate-y-0.5 hover:bg-teal-100 hover:shadow-lg"
+              >
+                <span className="inline-flex items-center gap-2 text-base font-semibold">
+                  <MessageCircle className="h-5 w-5" />
+                  Escribir por WhatsApp
+                </span>
+                <span className="text-sm text-teal-800">Te ayudamos a encontrar horario si no aparece en agenda.</span>
+              </a>
+            ) : (
+              <p className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm text-slate-600 sm:col-span-2">
+                Para activar el respaldo por WhatsApp, define <strong>NEXT_PUBLIC_WHATSAPP_NUMBER</strong>.
+              </p>
+            )}
+          </div>
+
+          <p className="mt-5 text-sm text-slate-600">
+            Si no encuentras un espacio en agenda, contáctanos por WhatsApp y te ayudamos a coordinar.
+          </p>
         </article>
 
         <BookingRequestForm />
+      </section>
+
+      <section className="relative mt-10 overflow-hidden rounded-3xl border border-teal-100 bg-gradient-to-br from-teal-50 via-white to-slate-50 p-6 shadow-sm sm:p-8">
+        <div className="pointer-events-none absolute -left-10 top-0 h-40 w-40 rounded-full bg-teal-100/60 blur-3xl" />
+        <div className="pointer-events-none absolute -right-12 bottom-0 h-44 w-44 rounded-full bg-slate-200/60 blur-3xl" />
+
+        <div className="relative">
+          <p className="text-xs tracking-[0.24em] uppercase text-teal-700">Políticas</p>
+          <h2 className="mt-3 text-2xl font-semibold text-slate-950 sm:text-3xl">Políticas y cancelaciones</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600 sm:text-base">
+          Esta sección está preparada para que puedas pegar aquí tus políticas definitivas de reserva, reprogramación y
+          cancelación.
+          </p>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <article className="rounded-2xl border border-slate-200/80 bg-white/90 p-5 shadow-sm">
+              <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-700">Política general</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                [Pegar aquí la política general: confirmación de cita, puntualidad, forma de pago y condiciones de
+                atención.]
+              </p>
+            </article>
+
+            <article className="rounded-2xl border border-slate-200/80 bg-white/90 p-5 shadow-sm">
+              <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-slate-700">Política de cancelación</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                [Pegar aquí la política de cancelación y reprogramación: tiempos mínimos de aviso, cargos aplicables y
+                excepciones.]
+              </p>
+            </article>
+          </div>
+        </div>
       </section>
     </main>
   );
