@@ -6,10 +6,9 @@ import { Menu, X } from "lucide-react";
 
 const navItems = [
   { href: "/", label: "Inicio" },
-  { href: "/servicios", label: "Servicios" },
   { href: "/sobre", label: "Sobre mi" },
   { href: "/articulos", label: "Articulos" },
-  { href: "/contacto", label: "Contacto" },
+  { href: "/contacto", label: "Preguntas frecuentes" },
 ];
 
 type SiteHeaderProps = {

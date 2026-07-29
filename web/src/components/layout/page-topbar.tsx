@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { ArrowLeft, CalendarDays, Home, MessageCircle, NotebookPen, Stethoscope, User } from "lucide-react";
+import { ArrowLeft, CalendarDays, CircleHelp, Home, NotebookPen, User } from "lucide-react";
 
 const quickLinks = [
   { href: "/", label: "Inicio", icon: Home },
-  { href: "/servicios", label: "Servicios", icon: Stethoscope },
   { href: "/sobre", label: "Sobre mi", icon: User },
   { href: "/articulos", label: "Articulos", icon: NotebookPen },
-  { href: "/contacto", label: "Contacto", icon: MessageCircle },
+  { href: "/contacto", label: "Preguntas frecuentes", icon: CircleHelp },
   { href: "/reservar", label: "Reservar", icon: CalendarDays },
 ];
 

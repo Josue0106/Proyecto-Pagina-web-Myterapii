@@ -5,7 +5,7 @@ import { ArrowRight, BookOpenText, CalendarDays, CheckCircle2, HeartPulse, Steth
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { HeroLanding } from "@/components/sections/hero-landing";
-import { getSlotImageUrl, type DeviceVariant } from "@/lib/media-assets";
+import { getSlotImageUrl } from "@/lib/media-assets";
 import { getSubstackPosts } from "@/lib/substack";
 
 type PageDeviceVariant = "mobile" | "desktop";
@@ -71,17 +71,26 @@ export default async function Home() {
     {
       title: "Valoracion inicial",
       description:
-        "Primera consulta con escucha activa, revisión del dolor y definición de objetivos.",
+        "Primera sesion para entender tu dolor, revisar movilidad y definir un plan de trabajo realista.",
+      points: ["Historia clinica y objetivos", "Evaluacion funcional", "Plan personalizado"],
     },
     {
       title: "Terapia manual",
       description:
-        "Tratamiento orientado a aliviar molestias, mejorar movilidad y reducir la sobrecarga.",
+        "Intervenciones para aliviar dolor, reducir tension y recuperar movimiento de forma progresiva.",
+      points: ["Movilizaciones", "Tratamiento de tejido blando", "Control de sintomas"],
     },
     {
       title: "Ejercicio terapéutico",
       description:
-        "Rutinas claras para progresar en casa y consolidar resultados entre sesiones.",
+        "Rutinas adaptadas a tu nivel para consolidar la recuperacion entre sesiones.",
+      points: ["Fortalecimiento", "Movilidad y control", "Progresion semanal"],
+    },
+    {
+      title: "Prevencion y readaptacion",
+      description:
+        "Acompanamiento para volver a entrenar o a tu rutina diaria con seguridad.",
+      points: ["Prevencion de recaidas", "Educacion en carga", "Seguimiento de avance"],
     },
   ];
 
@@ -90,7 +99,7 @@ export default async function Home() {
       <SiteHeader deviceVariant={deviceVariant} />
       <HeroLanding backgroundImageUrl={heroImageUrl} deviceVariant={deviceVariant} />
 
-      <section className="mx-auto grid w-full max-w-7xl gap-6 px-6 py-16 sm:px-10 lg:px-12 lg:grid-cols-[1fr_1fr]">
+      <section className="mx-auto w-full max-w-7xl px-6 py-16 sm:px-10 lg:px-12">
         <article className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
           <p className="text-xs tracking-[0.3em] uppercase text-teal-700">Metodo</p>
           <h2 className="mt-4 text-3xl font-semibold text-slate-950 sm:text-4xl">
@@ -106,30 +115,41 @@ export default async function Home() {
               [Stethoscope, "Ejercicio terapeutico"],
               [CalendarDays, "Seguimiento continuo"],
             ].map(([Icon, label]) => (
-              <div key={label as string} className="flex items-center gap-3 rounded-2xl bg-slate-50 px-4 py-3">
+              <div key={label as string} className="flex items-center gap-3 border-l-2 border-teal-100 py-2 pl-3">
                 <Icon className="h-4 w-4 text-teal-700" />
                 <p className="text-sm text-slate-700">{label as string}</p>
               </div>
             ))}
           </div>
         </article>
+      </section>
 
-        <article className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-          <div className="flex items-center justify-between">
-            <p className="text-xs tracking-[0.3em] uppercase text-teal-700">Servicios</p>
-            <Link href="/servicios" className="text-sm text-slate-700 transition hover:text-slate-950">
-              Ver todos
-            </Link>
-          </div>
-          <div className="mt-6 grid gap-4">
-            {services.map((service) => (
-              <div key={service.title} className="rounded-2xl border border-slate-200 p-5">
-                <h3 className="text-lg font-semibold text-slate-950">{service.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-slate-600">{service.description}</p>
-              </div>
-            ))}
-          </div>
-        </article>
+      <section id="servicios" className="mx-auto w-full max-w-7xl px-6 pb-16 scroll-mt-8 sm:px-10 lg:px-12">
+        <header className="max-w-3xl">
+          <p className="text-xs tracking-[0.3em] uppercase text-teal-700">Servicios</p>
+          <h2 className="mt-4 text-3xl font-semibold text-slate-950 sm:text-4xl">
+            Un plan de fisioterapia adaptado a tu recuperacion.
+          </h2>
+          <p className="mt-4 text-base leading-8 text-slate-600">
+            Cada servicio se adapta a tus necesidades, objetivos y momento de recuperacion.
+          </p>
+        </header>
+        <div className="mt-8 grid gap-5 md:grid-cols-2">
+          {services.map((service) => (
+            <article key={service.title} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 className="text-2xl font-semibold text-slate-950">{service.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">{service.description}</p>
+              <ul className="mt-5 grid gap-2 text-sm text-slate-700">
+                {service.points.map((point) => (
+                  <li key={point} className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-teal-700" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-6 pb-16 sm:px-10 lg:px-12">

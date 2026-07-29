@@ -28,8 +28,9 @@ export default function AboutPage() {
           <p className="text-xs tracking-[0.22em] uppercase text-teal-700">Principios</p>
           <ul className="mt-4 grid gap-3 text-sm text-slate-700">
             {values.map((value) => (
-              <li key={value} className="rounded-xl bg-slate-50 px-4 py-3">
-                {value}
+              <li key={value} className="flex gap-3 border-l-2 border-teal-100 py-2 pl-3">
+                <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-700" />
+                <span>{value}</span>
               </li>
             ))}
           </ul>
