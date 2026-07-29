@@ -1,6 +1,5 @@
 import { CalendarDays, MessageCircle } from "lucide-react";
 
-import { BookingRequestForm } from "@/components/forms/booking-request-form";
 import { PageTopbar } from "@/components/layout/page-topbar";
 import { getWhatsappUrl, siteSettings } from "@/lib/site-settings";
 
@@ -13,10 +12,10 @@ export default function BookingPage() {
       <p className="text-xs tracking-[0.3em] uppercase text-teal-700">Reservar cita</p>
       <h1 className="mt-4 text-5xl font-semibold text-slate-950 sm:text-6xl">Agenda tu sesión</h1>
       <p className="mt-6 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
-        Reserva directamente en Google Calendar y, si no encuentras horario, deja tu solicitud para contacto asistido.
+        Reserva directamente en Google Calendar y, si no encuentras horario, contáctanos por WhatsApp para ayudarte.
       </p>
 
-      <section className="mt-10 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+      <section className="mt-10">
         <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7">
           <div className="mb-3 flex items-center justify-between">
             <h2 className="text-lg font-semibold text-slate-900">Calendario de reservas de Google</h2>
@@ -73,8 +72,6 @@ export default function BookingPage() {
             Si no encuentras un espacio en agenda, contáctanos por WhatsApp y te ayudamos a coordinar.
           </p>
         </article>
-
-        <BookingRequestForm />
       </section>
 
       <section className="relative mt-10 overflow-hidden rounded-3xl border border-teal-100 bg-gradient-to-br from-teal-50 via-white to-slate-50 p-6 shadow-sm sm:p-8">
