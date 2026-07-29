@@ -80,7 +80,7 @@ export function HeroLanding({ backgroundImageUrl, deviceVariant = "desktop" }: H
             transition={disableHeavyAnimations ? { duration: 0.25 } : { delay: 0.34, duration: 0.65 }}
             className={`mt-8 max-w-xl text-white/85 ${isMobileView ? "text-sm leading-7" : "text-base leading-8 sm:text-lg"}`}
           >
-            Te acompano con evaluacion precisa, tratamiento personalizado y seguimiento real para que vuelvas a tu ritmo sin dudas.
+            Te acompaño con evaluación precisa, tratamiento personalizado y seguimiento real para que vuelvas a tu ritmo sin dudas.
           </motion.p>
 
           <motion.div
@@ -101,7 +101,7 @@ export function HeroLanding({ backgroundImageUrl, deviceVariant = "desktop" }: H
               href="/articulos"
               className={`inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 text-sm font-medium text-white transition hover:bg-white/20 ${isMobileView ? "w-full" : ""}`}
             >
-              Ver articulos
+              Ver artículos
               <BookOpenText className="h-4 w-4" />
             </Link>
           </motion.div>
@@ -113,7 +113,7 @@ export function HeroLanding({ backgroundImageUrl, deviceVariant = "desktop" }: H
             className="mt-12 flex items-center gap-2 text-sm text-white/70"
           >
             <ArrowRight className="h-4 w-4" />
-            Agenda en menos de 2 minutos desde movil o desktop.
+            Agenda en menos de 2 minutos desde móvil o computadora.
           </motion.div>
         </div>
       </div>

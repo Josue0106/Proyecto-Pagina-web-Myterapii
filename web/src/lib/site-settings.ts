@@ -5,10 +5,10 @@ export const siteSettings = {
     process.env.NEXT_PUBLIC_GOOGLE_BOOKING_URL ?? "https://calendar.app.google/xFkXWnNwQCSwjsBL7",
   timezoneLabel: "Costa Rica (GMT-6)",
   bookingDurationLabel: "60 minutos",
-  bookingWindowLabel: "Lunes a sabado, 9:00 a.m. a 8:00 p.m.",
+  bookingWindowLabel: "Lunes a sábado, 9:00 a.m. a 8:00 p.m.",
   breakWindowLabel: "Descanso diario de 12:00 m.d. a 2:00 p.m.",
   bookingBufferLabel: "10 minutos entre citas",
-  bookingNoticeLabel: "Minimo 12 horas de antelacion",
+  bookingNoticeLabel: "Mínimo 12 horas de antelación",
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "",
 };
 

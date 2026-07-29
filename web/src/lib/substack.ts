@@ -149,7 +149,7 @@ function parseSubstackFeed(xml: string, limit: number): SubstackPost[] {
     .slice(0, limit)
     .map((item) => {
       const content = item[1];
-      const title = getTagValue(content, "title") ?? "Articulo";
+      const title = getTagValue(content, "title") ?? "Artículo";
       const link = getTagValue(content, "link") ?? FALLBACK_PUBLICATION;
       const descriptionRaw =
         getTagValue(content, "description") ?? getTagValue(content, "content:encoded") ?? "";
@@ -161,7 +161,7 @@ function parseSubstackFeed(xml: string, limit: number): SubstackPost[] {
         title,
         url: link,
         publishedAt,
-        excerpt: excerpt || "Leer este articulo en Substack.",
+        excerpt: excerpt || "Leer este artículo en Substack.",
       };
     })
     .filter((post) => post.url);
@@ -179,7 +179,7 @@ function parseSubstackAtomFeed(xml: string, limit: number): SubstackPost[] {
     .slice(0, limit)
     .map((entry) => {
       const content = entry[1];
-      const title = getTagValue(content, "title") ?? "Articulo";
+      const title = getTagValue(content, "title") ?? "Artículo";
       const link = getAtomLink(content) ?? FALLBACK_PUBLICATION;
       const summaryRaw =
         getTagValue(content, "summary") ?? getTagValue(content, "content") ?? "";
@@ -192,7 +192,7 @@ function parseSubstackAtomFeed(xml: string, limit: number): SubstackPost[] {
         title,
         url: link,
         publishedAt,
-        excerpt: excerpt || "Leer este articulo en Substack.",
+        excerpt: excerpt || "Leer este artículo en Substack.",
       };
     })
     .filter((post) => post.url);
@@ -285,7 +285,7 @@ function toProfileFeedPost(item: ProfileFeedItem): SubstackPost | null {
     title,
     url,
     publishedAt: post.post_date ?? item.context?.timestamp ?? item.comment?.date,
-    excerpt: excerpt || "Leer este articulo en Substack.",
+    excerpt: excerpt || "Leer este artículo en Substack.",
   };
 }
 

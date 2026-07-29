@@ -37,7 +37,7 @@ export async function POST(request: Request) {
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
     return NextResponse.json({
       message:
-        "Solicitud recibida. Para guardarla automaticamente en base de datos, configura Supabase.",
+        "Solicitud recibida. Para guardarla automáticamente en la base de datos, configura Supabase.",
       stored: false,
     });
   }

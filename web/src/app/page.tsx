@@ -57,40 +57,40 @@ export default async function Home() {
           },
           {
             id: "home-fallback-sesiones",
-            title: "Que hacer entre sesiones para mejorar mas rapido",
+            title: "Qué hacer entre sesiones para mejorar más rápido",
             url: "/articulos",
           },
           {
             id: "home-fallback-movilidad",
-            title: "Movilidad y fuerza: como prevenir recaidas",
+            title: "Movilidad y fuerza: cómo prevenir recaídas",
             url: "/articulos",
           },
         ];
 
   const services = [
     {
-      title: "Valoracion inicial",
+      title: "Valoración inicial",
       description:
-        "Primera sesion para entender tu dolor, revisar movilidad y definir un plan de trabajo realista.",
-      points: ["Historia clinica y objetivos", "Evaluacion funcional", "Plan personalizado"],
+        "Primera sesión para entender tu dolor, revisar movilidad y definir un plan de trabajo realista.",
+      points: ["Historia clínica y objetivos", "Evaluación funcional", "Plan personalizado"],
     },
     {
       title: "Terapia manual",
       description:
-        "Intervenciones para aliviar dolor, reducir tension y recuperar movimiento de forma progresiva.",
-      points: ["Movilizaciones", "Tratamiento de tejido blando", "Control de sintomas"],
+        "Intervenciones para aliviar dolor, reducir tensión y recuperar movimiento de forma progresiva.",
+      points: ["Movilizaciones", "Tratamiento de tejido blando", "Control de síntomas"],
     },
     {
       title: "Ejercicio terapéutico",
       description:
-        "Rutinas adaptadas a tu nivel para consolidar la recuperacion entre sesiones.",
-      points: ["Fortalecimiento", "Movilidad y control", "Progresion semanal"],
+        "Rutinas adaptadas a tu nivel para consolidar la recuperación entre sesiones.",
+      points: ["Fortalecimiento", "Movilidad y control", "Progresión semanal"],
     },
     {
-      title: "Prevencion y readaptacion",
+      title: "Prevención y readaptación",
       description:
-        "Acompanamiento para volver a entrenar o a tu rutina diaria con seguridad.",
-      points: ["Prevencion de recaidas", "Educacion en carga", "Seguimiento de avance"],
+        "Acompañamiento para volver a entrenar o a tu rutina diaria con seguridad.",
+      points: ["Prevención de recaídas", "Educación en carga", "Seguimiento de avance"],
     },
   ];
 
@@ -101,18 +101,18 @@ export default async function Home() {
 
       <section className="mx-auto w-full max-w-7xl px-6 py-16 sm:px-10 lg:px-12">
         <article className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-          <p className="text-xs tracking-[0.3em] uppercase text-teal-700">Metodo</p>
+          <p className="text-xs tracking-[0.3em] uppercase text-teal-700">Método</p>
           <h2 className="mt-4 text-3xl font-semibold text-slate-950 sm:text-4xl">
             Tratamiento cercano, estructura profesional.
           </h2>
           <p className="mt-4 max-w-xl text-base leading-8 text-slate-600">
-            Trabajo con un proceso sencillo: evaluamos tu caso, marcamos objetivos concretos y medimos evolucion en cada sesion.
+            Trabajo con un proceso sencillo: evaluamos tu caso, marcamos objetivos concretos y medimos evolución en cada sesión.
           </p>
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
             {[
-              [CheckCircle2, "Diagnostico funcional"],
+              [CheckCircle2, "Diagnóstico funcional"],
               [HeartPulse, "Terapia manual"],
-              [Stethoscope, "Ejercicio terapeutico"],
+              [Stethoscope, "Ejercicio terapéutico"],
               [CalendarDays, "Seguimiento continuo"],
             ].map(([Icon, label]) => (
               <div key={label as string} className="flex items-center gap-3 border-l-2 border-teal-100 py-2 pl-3">
@@ -128,10 +128,10 @@ export default async function Home() {
         <header className="max-w-3xl">
           <p className="text-xs tracking-[0.3em] uppercase text-teal-700">Servicios</p>
           <h2 className="mt-4 text-3xl font-semibold text-slate-950 sm:text-4xl">
-            Un plan de fisioterapia adaptado a tu recuperacion.
+            Un plan de fisioterapia adaptado a tu recuperación.
           </h2>
           <p className="mt-4 text-base leading-8 text-slate-600">
-            Cada servicio se adapta a tus necesidades, objetivos y momento de recuperacion.
+            Cada servicio se adapta a tus necesidades, objetivos y momento de recuperación.
           </p>
         </header>
         <div className="mt-8 grid gap-5 md:grid-cols-2">
@@ -156,16 +156,16 @@ export default async function Home() {
         <article className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-xs tracking-[0.3em] uppercase text-teal-700">Articulos</p>
+              <p className="text-xs tracking-[0.3em] uppercase text-teal-700">Artículos</p>
               <h2 className="mt-3 text-3xl font-semibold text-slate-950 sm:text-4xl">
-                Recursos y educacion para cuidar tu cuerpo fuera de consulta.
+                Recursos y educación para cuidar tu cuerpo fuera de consulta.
               </h2>
             </div>
             <Link
               href="/articulos"
               className="inline-flex h-11 items-center gap-2 rounded-full border border-slate-300 px-5 text-sm font-medium text-slate-900 transition hover:bg-slate-50"
             >
-              Ir a articulos
+              Ir a artículos
               <BookOpenText className="h-4 w-4" />
             </Link>
           </div>
@@ -181,7 +181,7 @@ export default async function Home() {
                   rel={article.url.startsWith("http") ? "noreferrer" : undefined}
                   className="mt-4 inline-flex items-center gap-2 text-sm text-teal-700 hover:text-teal-800"
                 >
-                  Leer articulo
+                  Leer artículo
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </article>

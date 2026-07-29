@@ -22,9 +22,9 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Clínica de Fisioterapia | Reserva online y seguimiento",
+  title: "Clínica de Fisioterapia | Reserva en línea y seguimiento",
   description:
-    "Web de fisioterapia con reservas online, recordatorios automáticos y seguimiento clínico sencillo.",
+    "Web de fisioterapia con reservas en línea, recordatorios automáticos y seguimiento clínico sencillo.",
 };
 
 export const viewport: Viewport = {

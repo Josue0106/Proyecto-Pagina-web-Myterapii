@@ -11,7 +11,7 @@ export default function BookingPage() {
     <main className="mx-auto min-safe-screen w-full max-w-7xl px-6 py-24 sm:px-10 lg:px-12 pb-safe">
       <PageTopbar />
       <p className="text-xs tracking-[0.3em] uppercase text-teal-700">Reservar cita</p>
-      <h1 className="mt-4 text-5xl font-semibold text-slate-950 sm:text-6xl">Agenda tu sesion</h1>
+      <h1 className="mt-4 text-5xl font-semibold text-slate-950 sm:text-6xl">Agenda tu sesión</h1>
       <p className="mt-6 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
         Reserva directamente en Google Calendar y, si no encuentras horario, deja tu solicitud para contacto asistido.
       </p>
@@ -32,7 +32,7 @@ export default function BookingPage() {
           </div>
 
           <p className="text-sm leading-7 text-slate-700">
-            Se abrira una nueva pestaña para seleccionar fecha y hora disponibles.
+            Se abrirá una nueva pestaña para seleccionar fecha y hora disponibles.
           </p>
 
           <a
@@ -49,7 +49,7 @@ export default function BookingPage() {
               <strong>Zona horaria:</strong> {siteSettings.timezoneLabel}
             </p>
             <p>
-              <strong>Duracion:</strong> {siteSettings.bookingDurationLabel}
+              <strong>Duración:</strong> {siteSettings.bookingDurationLabel}
             </p>
             <p>
               <strong>Horario:</strong> {siteSettings.bookingWindowLabel}
@@ -61,7 +61,7 @@ export default function BookingPage() {
               <strong>Margen:</strong> {siteSettings.bookingBufferLabel}
             </p>
             <p>
-              <strong>Antelacion:</strong> {siteSettings.bookingNoticeLabel}
+              <strong>Antelación:</strong> {siteSettings.bookingNoticeLabel}
             </p>
             <p>
               <strong>WhatsApp:</strong> {siteSettings.whatsappNumber || "Pendiente de configurar"}
@@ -75,7 +75,7 @@ export default function BookingPage() {
               rel="noreferrer"
               className="mt-4 inline-flex rounded-full border border-slate-300 px-5 py-2.5 text-sm font-medium text-slate-900 transition hover:bg-slate-100"
             >
-              No ves horario? Escribenos por WhatsApp
+              ¿No ves horario? Escríbenos por WhatsApp
             </a>
           ) : (
             <p className="mt-4 text-sm text-slate-600">

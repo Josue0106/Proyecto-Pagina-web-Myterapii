@@ -58,7 +58,7 @@ export function BookingRequestForm() {
     } catch {
       setState({
         status: "error",
-        message: "No se pudo enviar la solicitud. Intentalo de nuevo.",
+        message: "No se pudo enviar la solicitud. Inténtalo de nuevo.",
       });
     }
   }
@@ -81,7 +81,7 @@ export function BookingRequestForm() {
       </label>
 
       <label className="grid gap-1 text-sm text-slate-700">
-        Telefono (opcional)
+        Teléfono (opcional)
         <input name="phone" className="rounded-xl border border-slate-300 px-3 py-2" />
       </label>
 

@@ -3,8 +3,8 @@ import { ArrowLeft, CalendarDays, CircleHelp, Home, NotebookPen, User } from "lu
 
 const quickLinks = [
   { href: "/", label: "Inicio", icon: Home },
-  { href: "/sobre", label: "Sobre mi", icon: User },
-  { href: "/articulos", label: "Articulos", icon: NotebookPen },
+  { href: "/sobre", label: "Sobre mí", icon: User },
+  { href: "/articulos", label: "Artículos", icon: NotebookPen },
   { href: "/contacto", label: "Preguntas frecuentes", icon: CircleHelp },
   { href: "/reservar", label: "Reservar", icon: CalendarDays },
 ];
